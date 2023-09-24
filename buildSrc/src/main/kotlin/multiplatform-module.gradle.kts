@@ -18,6 +18,22 @@ kotlin {
         nodejs()
         browser()
     }
+
+    linuxX64()
+    linuxArm64()
+    mingwX64()
+//    macosX64()
+//    macosArm64()
+
+    sourceSets {
+        val nativeMain by creating {
+            dependsOn(commonMain.get())
+        }
+        targets.map { it.name }
+            .filter { it.endsWith("64") }
+            .map { getByName("${it}Main") }
+            .forEach { it.dependsOn(nativeMain) }
+    }
 }
 
 tasks {

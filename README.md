@@ -1,5 +1,9 @@
 # DataCache
 
+## Notice: This is a fork with goals of adding support for Kotlin/Native. Support is limited.
+This fork contains necessary changes to allow the project to compile for Kotlin/Native. Only some native
+platforms are currently created for distribution.
+
 An adaptable cache that allows query-like operations.
 
 ```kotlin

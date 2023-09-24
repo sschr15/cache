@@ -26,6 +26,9 @@ kotlin {
         nodejs()
     }
 
+    linuxX64()
+    mingwX64()
+
     sourceSets {
         all {
             languageSettings.optIn(OptIns.coroutines)

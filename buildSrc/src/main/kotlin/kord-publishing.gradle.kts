@@ -63,7 +63,11 @@ publishing {
 
         }
 
-        if (!isJitPack) {
+        if (System.getenv("CI") == null) {
+            repositories {
+                mavenLocal()
+            }
+        } else if (!isJitPack) {
             repositories {
                 maven {
                     url = uri(if (Library.isSnapshot) Repo.snapshotsUrl else Repo.releasesUrl)
